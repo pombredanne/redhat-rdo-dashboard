@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta charset="utf-8"/>
+        <title></title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" type="text/css" id="theme"
+              href="VizGrimoireJS/vizgrimoire2.css"/>
+        <link href="VizGrimoireJS/bootstrap/css/bootstrap.css" rel="stylesheet"/>
+        <link rel="stylesheet" type="text/css" href="custom.css"/>
+        <link href="VizGrimoireJS/bootstrap/css/bootstrap-responsive.css"
+              rel="stylesheet"/>
+        <link rel="shortcut icon" href="favicon.png"/>
+    </head>
+
+    <body>
+        <div class="container-narrow">
+            <div id="Navbar"></div>
+
+            <!-- info text -->
+            <div id="info" class="row-fluid">
+                <h4>Information about all repositories</h4>
+                Some charts and tables for top repositories in the project, and a summary
+                of the evolution of their participation with links to more detailed
+                information per repository.
+            </div>
+
+            <!-- repositories -->
+            <div id="summary-evol" class="row-fluid">
+                <!-- bars -->
+                <div class="span6">
+                    <div class="FilterItemsGlobal" data-data-source="scr" data-graph="bars"
+                         data-metric="scr_submitted" data-filter="repos"
+                         data-legend="true" data-help="true" data-order-by="scr_submitted"></div>
+                    <i><b>Sent per repository (aggregated)</b></i>
+                    <a href="notes.html#note:charts:repositories:submitted"><img src="qm_15.png"></a>
+                </div>
+                <!-- end bars -->
+
+                <div class="span6">
+                    <div class="FilterItemsSummary" data-filter="repos"
+                         data-data-source="scr"></div>
+                </div>
+            </div>
+            <!-- repositories -->
+
+            <!-- list of repositories -->
+            <div id="nav" class="row-fluid">
+                <div class="FilterItemsNav" data-data-source="scr"
+                     data-order-by="scr_submitted" data-filter="repos"></div>
+            </div>
+            <!-- end list of repositories -->
+
+            <!-- repositories charts -->
+            <div id="list" class="row-fluid">
+                <div class="FilterItemsMiniCharts" data-data-source="scr"
+                     data-metrics="scr_submitted,scr_merged" data-filter="repos"
+                     data-order-by="scr_submitted"></div>
+            </div>
+            <!-- end repositories charts -->
+
+            <footer>
+                <div id="Footer"></div>
+            </footer>
+        </div>
+
+        <script type="text/javascript" src="VizGrimoireJS/lib/jquery-1.7.1.min.js"></script>
+        <script type="text/javascript" src="VizGrimoireJS/bootstrap/js/bootstrap.js"></script>
+        <script type="text/javascript" src="VizGrimoireJS/vizgrimoire2.min.js"></script>
+    </body>
+</html>
