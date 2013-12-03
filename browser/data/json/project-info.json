@@ -1,0 +1,17 @@
+{
+"date":"",
+"project_name" :"RDO",
+"project_url" :"http://openstack.redhat.com/",
+"scm_url":"https://github.com/redhat-openstack/",
+"scm_name":"https://github.com/redhat-openstack/",
+"scm_type":"git",
+"its_url":"https://bugzilla.redhat.com/buglist.cgi?product=RDO",
+"its_name":"Tickets",
+"its_type":"Bugzilla",
+"mls_url":"https://www.redhat.com/archives/rdo-list",
+"mls_name":"Mailing lists",
+"mls_type":"mailman",
+"producer":"",
+"blog_url":""
+}
+
