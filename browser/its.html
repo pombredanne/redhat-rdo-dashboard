@@ -58,76 +58,57 @@
                 <!-- right column -->
                 <div class="span6">
                     <!-- stats -->
-
-                    <!-- repositories -->
-                    <div class="stats" style="padding:20px 11px 0 0;">
-                        <div class="row-fluid">
-                            <div class="span3"></div>
-                            <div class="span2">
-                                <strong class="count">
-                                    <span class="GlobalData" data-data-source="its"
-                                          data-field="its_repositories"></span>
-                                </strong>
-                            </div>
-                            <div class="span4">repositories</div>
-                            <div class="span3"></div>
-                        </div>
+                    <div class="row-fluid">
+                        <table class="table table-striped">
+                            <tr><td><strong>Issue tracking system</strong> </span>)</td></tr>
+                        </table>
                     </div>
-                    <!-- end repositories -->
 
-                    <!-- companies -->
-                    <div class="stats" style="padding:20px 11px 0 0;">
-                        <div class="row-fluid">
-                            <div class="span3"></div>
-                                <div class="span2">
-                                    <strong class="count">
+                    <div class="row-fluid">
+                        <div class="span6">
+                            <table class="table table-striped">
+                                <tr>
+                                    <td>
                                         <span class="GlobalData" data-data-source="its"
-                                          data-field="its_companies"></span>
-                                    </strong>
-                                </div>
-                            <div class="span4">companies</div>
-                            <div class="span3"></div>
+                                              data-field="its_repositories"></span>
+                                    </td>
+                                    <td>repositories</td>
+                                </tr>
+                                <tr>
+                                    <td>                                                         
+                                      <span class="GlobalData" data-data-source="its"
+                                              data-field="tickets"></span>
+                                    </td>
+                                    <td>tickets</td>                        
+                                </tr>
+                            </table>
                         </div>
-                    </div>
-                    <!-- end companies -->
-
-                    <!-- tickets -->
-                    <div class="stats" style="padding:20px 11px 0 0;">
-                        <div class="row-fluid">
-                            <div class="span3"></div>
-                            <div class="span2">
-                                <strong class="count">
-                                    <span class="GlobalData" data-data-source="its"
-                                          data-field="tickets"></span>
-                                </strong>
-                            </div>
-                            <div class="span4">tickets</div>
-                            <div class="span3"></div>
-                        </div>
-                    </div>
-                    <!-- end tickets -->
-
-                    <!-- closers -->
-                    <div class="stats" style="padding:20px 11px 0 0;">
-                        <div class="row-fluid">
-                            <div class="span3"></div>
-                                <div class="span2">
-                                    <strong class="count">
+                        <div class="span6">
+                            <table class="table table-striped">
+                                <tr>
+                                 <td>
                                         <span class="GlobalData" data-data-source="its"
-                                              data-field="its_closers"></span>
-                                    </strong>
-                                </div>
-                            <div class="span4">bug fixers</div>
-                            <div class="span3"></div>
+                                              data-field="its_closers"></span>                 
+                                    </td>
+                                    <td>bug fixers</td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span class="GlobalData" data-data-source="its"
+                                              data-field="its_companies"></span>                 
+                                    </td>
+                                    <td>companies</td>
+                                </tr>
+                                
+                            </table>
                         </div>
                     </div>
-                    <!-- end closers -->
                     <!-- end stats -->
 
                     <!-- top closers -->
-                    <div class="Top" data-data-source="its" data-graph="bars"
-                         data-metric="closers" data-limit="10"
-                         data-people_links1="false" ></div>
+                    <div class="Top" data-data-source="its" data-period="last month"
+                         data-metric="closers" data-limit="9" data-people_links="true"></div>
                     <!-- end closers-->
                 </div>
                 <!-- end right column -->
