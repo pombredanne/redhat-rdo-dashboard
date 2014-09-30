@@ -1,153 +1,168 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Luis" >
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta charset="utf-8"/>
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" id="theme"
-              href="VizGrimoireJS/vizgrimoire.css"/>
-        <link href="VizGrimoireJS/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-        <link rel="stylesheet" type="text/css" href="custom.css"/>
-        <link href="VizGrimoireJS/bootstrap/css/bootstrap-responsive.css"
-              rel="stylesheet"/>
-        <link rel="shortcut icon" href="favicon.png"/>
-    </head>
+    <title></title>
 
-    <body>
-        <div class="container-narrow">
-            <div id="Navbar"></div>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
 
-            <!-- summary, reviews, patches -->
-            <div class="row-fluid">
+    <!-- Custom styles for this template -->
+    <link href="./css/custom.css" rel="stylesheet">
 
-                <!-- summary -->
-                <div class="span2">
-                    <h4>Source Code Review: Gerrit</h4>
-                    <div class="Summary" data-data-source="scr"></div>
-                </div>
-                <!-- end summary -->
+    <!-- icons -->
+    <link rel="stylesheet" href="./css/awesome/css/font-awesome.min.css">
 
-                <!-- reviews, patches -->
-                <div class="span10">
-                    <div class="row-fluid">
+    <!-- custom -->
+    <!-- <link rel="stylesheet" href="VizGrimoireJS/custom.css">-->
+    <link rel="stylesheet" type="text/css" id="theme" href="./css/vizgrimoire.css">
+  </head>
+  <body>
+    
+    <div id="Navbar"></div>
+    
+    <div class="container-fluid">
+      <div class="row"><span class="SectionBreadcrumb col-md-12"></span></div>
 
-                        <!-- left column - reviews -->
-                        <div class="span6">
-                            <h4>REVIEWS</h4>
+      <!-- Section HTML will be placed here, do not modify manually -->
+      <!-- REPLACE SECTION HTML -->
+      
+<!-- commits, authors, stats, top authors -->
+<div class="row">
+  
+  <!-- left column -->
+  <div class="col-md-6">
+    
+    <div class="row">
+      <div class="col-md-12">
+	<div class="well">
+          <div class="MetricsEvol" data-data-source="scr"
+               data-metrics="scr_pending" data-convert="aggregate" data-min="true"
+               style="height: 120px;" data-frame-time="true"></div>
+          <div class="MicrodashText" data-metric="pending"></div>
+	</div>
+      </div>
+    </div>
+    
+    <!--<div class="row">
+	<div class="well">
+          <div class="MetricsEvol" data-data-source="scr"
+               data-metrics="review_time_days_median" data-legend="true"
+               data-frame-time="true"></div>
+	</div>
+    </div>-->
+    
+    <div class="row">
+      <div class="col-md-12">
+	<div class="well">
+          <div class="MetricsEvol" data-data-source="scr"
+               data-metrics="scr_submitted,scr_merged,scr_abandoned"
+               data-min="true" data-legend="true" style="height:200px;"
+               data-frame-time="true" data-help="true"></div>
+          <div class="MicrodashText" data-metric="scr_submitted" data-name="true"></div>
+          <div class="MicrodashText" data-metric="scr_merged" data-name="true"></div>
+          <div class="MicrodashText" data-metric="scr_abandoned" data-name="true"></div>
+	</div>
+      </div>
+    </div>    
 
-                            <!-- submissions -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_submitted"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Submissions per week</b></i>
-                            </div>
-                            <!-- end submissions -->
+  </div>
+  <!-- end left column -->
 
-                            <!-- opened -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_opened"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Remaining Opened</b></i>
-                            </div>
-                            <!-- end opened -->
+  <!-- right column -->
+  <div class="col-md-6">    
+    <div class="panel panel-default">
+      <div class="panel-body">
 
-                            <!-- merged -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_merged"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Merged</b></i>
-                            </div>
-                            <!-- end merged -->
+	<div class="row"><div class="col-md-12">
+	    <p class="section-title"><i class="fa fa-check"></i> Source Code Review</p>
+	</div></div>
+	
+	<div class="row">
+	  <div class="col-md-12">
+            <table class="table">
+	      <tr>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_repositories"></span></td>
+		<td>
+                  <div class="SmartLinks" data-target="scr-repos.html" data-label="repositories"></div>
+                </td>
+		<td><span class="GlobalData" data-data-source="scr"
+                      data-field="scr_companies"></span></td>
+		<td>
+                  <div class="SmartLinks" data-target="scr-companies.html" data-label="companies"></div>
+                </td>
+              </tr>
+              <tr>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_new"></span></td>
+		<td>new code reviews</td>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_merged"></span></td>
+		<td>accepted contributions</td>
+              </tr>
+              <tr>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_WaitingForReviewer"></span></td>
+		<td>code reviews waiting for reviewer</td>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_WaitingForSubmitter"></span></td>
+		<td>code reviews waiting for submitter</td>
+              </tr>	      
+              <tr>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_reviewers"></span></td>
+		<td>total code reviewers</td>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_reviewers_7"></span></td>
+		<td>code reviewers last week</td>
+              </tr>	      
+              <tr>
+		<td><span class="GlobalData" data-data-source="scr"
+			  data-field="scr_review_time_days_median"></span></td>
+		<td>median time to review in days</td>
+		<td></td>
+		<td></td>
+              </tr>
+            </table>
+	  </div>
+	</div>
+      </div>
+      <div class="panel-body">
+	<div class="col-md-6">
+          <div class="Top" data-data-source="scr" data-metric="openers"></div>
+	</div>
+	<div class="col-md-6">
+          <div class="Top" data-data-source="scr" data-metric="mergers"></div>
+	</div>
+      </div>
+    </div>
+    <!-- end right column -->
+  </div>
+  <!-- end commits, authors, stats, top authors -->
+  
+</div>
 
-                            <!-- abandoned -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_abandoned"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Abandoned</b></i>
-                            </div>
-                            <!-- end abandoned -->
+      <!-- END SECTION  HTML-->
 
-                            <!-- closed -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_closed"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Closed</b></i>
-                            </div>
-                            <!-- end closed -->
-
-                        </div>
-                        <!-- end left column - reviews -->
-
-                        <!-- right column - patches -->
-                        <div class="span6">
-                            <h4>PATCHES</h4>
-
-                            <!-- verified -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_verified"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Verified</b></i>
-                            </div>
-                            <!-- end verified -->
-
-                            <!-- approved -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_approved"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Approved</b></i>
-                            </div>
-                            <!-- end approved -->
-
-                            <!-- code review -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_codereview"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Code Review</b></i>
-                            </div>
-                            <!-- end code review -->
-
-                            <!-- sent patches -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_sent"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Sent</b></i>
-                            </div>
-                            <!-- end sent patches -->
-
-                            <!-- waiting for reviewer -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_WaitingForReviewer"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Waiting For Reviewer</b></i>
-                            </div>
-                            <!-- end waiting for reviewer -->
-
-                            <!-- waiting for submitter -->
-                            <div class="stats">
-                                <div class="MetricsEvol" data-data-source="scr" data-metrics="scr_WaitingForSubmitter"
-                                     data-legend="false" data-help="true"></div>
-                                <i><b>Waiting for submitter</b></i>
-                            </div>
-                            <!-- end waiting for submitter -->
-
-                        </div>
-                         <!-- end right column - patches -->
-                    </div>
-                </div>
-                <!-- end reviews, patches -->
-
-            </div>
-            <!-- end summary, reviews, patches -->
-
-            <footer>
-                <div id="Footer"></div>
-            </footer>
-        </div>
-
-        <script type="text/javascript" src="VizGrimoireJS/lib/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="VizGrimoireJS/bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="VizGrimoireJS/vizgrimoire.min.js"></script>
-    </body>
+      <footer>
+        <div id="Footer"></div>
+      </footer>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./lib/jquery-1.11.1.min.js"></script>
+    <script src="./lib/bootstrap-3.1.1.min.js"></script>
+    <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
+    <script src="./lib/vizgrimoire.min.js"></script>
+  </body>
 </html>
+

@@ -1,86 +1,116 @@
 <!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Luis" >
+    <link rel="shortcut icon" href="../../assets/ico/favicon.png">
 
-<html lang="en">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <meta charset="utf-8"/>
-        <title></title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <link rel="stylesheet" type="text/css" id="theme"
-              href="VizGrimoireJS/vizgrimoire.css"/>
-        <link href="VizGrimoireJS/bootstrap/css/bootstrap.css" rel="stylesheet"/>
-        <link rel="stylesheet" type="text/css" href="custom.css"/>
-        <link href="VizGrimoireJS/bootstrap/css/bootstrap-responsive.css"
-              rel="stylesheet"/>
-        <link rel="shortcut icon" href="favicon.png"/>
-    </head>
+    <title></title>
 
-    <body>
-        <div class="container-narrow">
-            <div id="Navbar"></div>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/jasny-bootstrap.min.css" rel="stylesheet">
 
-            <div class="row-fluid"><h4>Information about tags used</h4></div>
-            
-            <!-- list of repositories -->
-            <div id="nav" class="row-fluid">
-                <div class="FilterItemsNav" data-data-source="qaforums"
-                     data-order-by="qaforums_qsent" data-filter="repos" style="align: center"></div>                  
-            </div>
-            <!-- end list of repositories -->
+    <!-- Custom styles for this template -->
+    <link href="./css/custom.css" rel="stylesheet">
 
-            <!-- commits, authors repository -->
-            <div class="well">
-                <div id="summary-static" class="row-fluid">
-                    <!-- commits -->
-                    <div class="span1"></div>
-                    <div class="span4">
-                        <i>
-                            <b>Questions per tag (aggregated)</b>
-                        </i>
-                        <div class="FilterItemsGlobal" data-data-source="qaforums"
-                             data-metric="qaforums_qsent" data-filter="repos"
-                             data-legend-div="repos_legend" data-limit="10"
-                             data-order-by="qaforums_qsent">
-                        </div>
-                    </div>
-                    <!-- end commits -->
+    <!-- icons -->
+    <link rel="stylesheet" href="./css/awesome/css/font-awesome.min.css">
 
-                    <div class="span2" id="repos_legend"></div>
+    <!-- custom -->
+    <!-- <link rel="stylesheet" href="VizGrimoireJS/custom.css">-->
+    <link rel="stylesheet" type="text/css" id="theme" href="./css/vizgrimoire.css">
+  </head>
+  <body>
+    
+    <div id="Navbar"></div>
+    
+    <div class="container-fluid">
+      <div class="row"><span class="SectionBreadcrumb col-md-12"></span></div>
 
-                    <!-- authors -->
-                    <div class="span4">
-                        <i>
-                            <b>Authors per tag (aggregated)</b>
-                        </i>
-                        <div class="FilterItemsGlobal" data-data-source="qaforums"
-                             data-metric="qaforums_qsenders" data-filter="repos"
-                             data-legend="false" data-limit="10"
-                             data-order-by="qaforums_qsenders"></div>
-                    </div>
-                    <!-- end authors -->
-                    <div class="span1"></div>
-                </div>
-            </div>
-            <!-- end commits, authors repository -->
-            
+      <!-- Section HTML will be placed here, do not modify manually -->
+      <!-- REPLACE SECTION HTML -->
+      <!-- info text -->
+<div class="well">
+  <div class="row">
+    <div class="col-md-6">      
+      <p>Some charts and tables for top questions in the forums, and a summary of the evolution of their tags with links to more detailed information</p>
+    </div>
+    <div class="col-md-6">
+      <!-- evolution #companies -->
+      <div class="MetricsEvol" data-data-source="qaforums"
+           data-metrics="qaforums_qsent" data-legend="false" 
+           data-title="Total questions sent per month" data-help="false"
+           data-light-style="true" style="height: 80px;"></div>
+    </div>
+  </div>
 
-            <div id="summary-static" class="row-fluid"></div>
+  <div class="row">
+    <div class="col-md-12 FilterItemsNav">
+      <div class="FilterItemsNav center-block" data-data-source="qaforums"
+	   data-order-by="qaforums_qsenders" data-filter="repos"></div>
+    </div>
+  </div>
+  
+  <!-- bar charts: commits, authors company -->
+  <div class="row">
+    <!-- commits -->
+    <div class="col-md-1"></div>
+    <div class="col-md-4">
+      <div class="FilterItemsGlobal" data-data-source="qaforums"
+           data-metric="qaforums_qsent" data-filter="repos"
+           data-legend-div="barchart_legend" data-limit="10"
+           data-order-by="qaforums_qsenders"
+           data-title="Questions per tag"></div>
+    </div>
+    <!-- end commits -->
+    <div class="col-md-2" id="barchart_legend"
+         style="text-align:left;font-size: 1.2em;padding-top:10px;padding-left:20px;"></div>
+    <!-- authors -->
+    <div class="col-md-4">
+      <div class="FilterItemsGlobal" data-data-source="qaforums"
+           data-metric="qaforums_qsenders" data-filter="repos"
+           data-legend="false" data-limit="10" data-order-by="qaforums_qsenders"
+           data-title="Authors of the questions per tag"></div>
+    </div>
+    <!-- end authors -->
+    <div class="col-md-1"></div>
+  </div>
+  <!-- end of bar charts: commits, authors company -->
 
-            <!-- commits per repository -->
-            <div id="list" class="row-fluid">
-                <div class="FilterItemsMiniCharts" data-data-source="qaforums"
-                     data-metrics="qaforums_qsent,qaforums_qsenders" data-filter="repos">
-                </div>
-            </div>
-            <!-- end commits per repository -->
+  <!-- commits per company -->
+  <div id="list" class="row">
+    <div class="FilterItemsMiniCharts" data-data-source="qaforums"
+         data-metrics="qaforums_qsent,qaforums_qsenders" data-filter="repos"
+         data-order-by="qaforums_qsenders"></div>
+  </div>
+  <div class="row"><div class="col-md-12">
+      <div class="FilterItemsNav" data-data-source="qaforums"
+	   data-order-by="qaforums_qsenders" data-filter="repos"></div>
+    </div>
+  </div>
+  
+</div>
+<!-- end commits per company -->
 
-            <footer>
-                <div id="Footer"></div>
-            </footer>
-        </div>
 
-        <script type="text/javascript" src="VizGrimoireJS/lib/jquery-1.7.1.min.js"></script>
-        <script type="text/javascript" src="VizGrimoireJS/bootstrap/js/bootstrap.js"></script>
-        <script type="text/javascript" src="VizGrimoireJS/vizgrimoire.min.js"></script>
-    </body>
+
+      <!-- END SECTION  HTML-->
+
+      <footer>
+        <div id="Footer"></div>
+      </footer>
+    </div>
+    
+    <!-- Bootstrap core JavaScript
+         ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="./lib/jquery-1.11.1.min.js"></script>
+    <script src="./lib/bootstrap-3.1.1.min.js"></script>
+    <script src="./lib/jasny-bootstrap-3.1.3.min.js"></script>
+    <script src="./lib/vizgrimoire.min.js"></script>
+  </body>
 </html>
+
