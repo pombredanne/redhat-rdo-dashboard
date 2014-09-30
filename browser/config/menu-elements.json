@@ -1,0 +1,31 @@
+{
+    "menu":{
+	"scm": [
+            "companies",
+            "contributors",
+            "repos"
+	],
+	"mls": [
+            "companies",
+            "contributors",
+            "repos"
+	],
+    "qaforums": ["tags"],
+	"studies": [
+            "demographics"
+	],
+	"its": [
+            "companies",
+            "contributors",
+            "repos",
+            "states"
+	],
+	"wiki": [],
+	"extra1": [
+	    ["Link 1", "http://bitergia.com"],
+	    ["Link 2", "https://twitter.com/bitergia"],
+	    ["Link 2", "https://twitter.com/flossmetrics"]
+	]
+    },
+    "releases":[]
+}
