@@ -19,6 +19,10 @@
             "repos",
             "states"
 	],
+    "irc": [
+            "contributors",
+            "repos"
+    ],
 	"wiki": [],
 	"extra1": [
 	    ["Link 1", "http://bitergia.com"],
